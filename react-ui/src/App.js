@@ -99,13 +99,12 @@ class App extends Component {
         {this.state.lng && <p>Lng: {this.state.lng}</p>}
         <br />
         {this.state.currentTemp && (
-          <div>
+          <div className="main">
             <Currently
               city={this.state.city}
               currentTemp={this.state.currentTemp}
               currentHumidity={this.state.currentHumidity}
             />
-            <hr />
             <Hourly hourly={this.state.hourly} />
           </div>
         )}
