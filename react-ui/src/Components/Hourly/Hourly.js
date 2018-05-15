@@ -7,7 +7,7 @@ const Hourly = props => {
       <p>
         <strong>Hourly</strong>
       </p>
-      {props.hourly.slice(1, 13).map(hour => {
+      {props.hourly.slice(1, 14).map(hour => {
         return (
           <div key={hour.time}>
             <p>

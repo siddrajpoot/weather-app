@@ -5,6 +5,7 @@ import moment from 'moment';
 import AddressForm from './Components/AddressForm/AddressForm';
 import Currently from './Components/Currently/Currently';
 import Hourly from './Components/Hourly/Hourly';
+import Daily from './Components/Daily/Daily';
 import './App.css';
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let time = moment.unix(1526342400).format('h a');
+    let time = moment.unix(1526281200).format();
     console.log(time);
   }
 
@@ -81,7 +82,8 @@ class App extends Component {
             this.setState(() => ({
               currentTemp: Math.round(res.data.currently.temperature),
               currentHumidity: res.data.currently.humidity * 100,
-              hourly: res.data.hourly.data
+              hourly: res.data.hourly.data,
+              daily: res.data.daily.data
             }));
           });
 
@@ -106,6 +108,7 @@ class App extends Component {
               currentHumidity={this.state.currentHumidity}
             />
             <Hourly hourly={this.state.hourly} />
+            <Daily daily={this.state.daily} />
           </div>
         )}
       </div>
