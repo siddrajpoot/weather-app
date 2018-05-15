@@ -11,7 +11,7 @@ const Daily = props => {
         return (
           <div key={day.time}>
             <p>
-              {moment.unix(day.time1).format('dddd MMM Do')}
+              {moment.unix(day.time).format('dddd MMM Do')}
               <br />
               High: {Math.round(day.temperatureHigh)}&deg;F Low:{' '}
               {Math.round(day.temperatureLow)}&deg;F
