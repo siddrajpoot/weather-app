@@ -6,8 +6,8 @@ const Currently = props => {
       <p>
         <strong>{props.city}</strong>
       </p>
-      <p>Currently: {props.currentTemp}&deg;F</p>
-      <p>Humidity: {props.currentHumidity}%</p>
+      <p>Currently: {Math.round(props.currentTemp)}&deg;F</p>
+      <p>Humidity: {Math.round(props.currentHumidity)}%</p>
       <p>
         High: {Math.round(props.currentHigh)}&deg;F Low:{Math.round(
           props.currentLow

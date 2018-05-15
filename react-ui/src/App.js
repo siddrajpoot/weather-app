@@ -94,7 +94,7 @@ class App extends Component {
       .then(res => {
         console.log('Darksky:', res.data);
         this.setState(() => ({
-          currentTemp: Math.round(res.data.currently.temperature),
+          currentTemp: res.data.currently.temperature,
           currentHumidity: res.data.currently.humidity * 100,
           currentHigh: res.data.daily.data[0].temperatureHigh,
           currentLow: res.data.daily.data[0].temperatureLow,
