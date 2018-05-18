@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Day from './Day';
 
 const Daily = props => {
   return (
@@ -9,15 +10,12 @@ const Daily = props => {
       </p>
       {props.daily.slice(1, 8).map(day => {
         return (
-          <div key={day.time}>
-            <p>
-              {moment.unix(day.time).format('ddd M/D')}
-              <br />
-              High: {Math.round(day.temperatureHigh)}&deg;F Low:{Math.round(
-                day.temperatureLow
-              )}&deg;F
-            </p>
-          </div>
+          <Day
+            key={day.time}
+            time={day.time}
+            temperatureHigh={day.temperatureHigh}
+            temperatureLow={day.temperatureLow}
+          />
         );
       })}
     </div>
