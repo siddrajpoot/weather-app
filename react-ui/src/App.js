@@ -43,6 +43,7 @@ class App extends Component {
   }
 
   getGeocode(userAddress) {
+    console.log('test');
     return new Promise((resolve, reject) => {
       axios
         .get('/api/geocode', {
