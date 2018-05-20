@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import AddressForm from './Components/AddressForm';
-import Currently from './Components/Currently';
-import Hourly from './Components/Hourly';
-import Daily from './Components/Daily';
+import AddressForm from './components/AddressForm';
+import Currently from './components/Currently';
+import Hourly from './components/Hourly';
+import Daily from './components/Daily';
 import 'materialize-css/dist/css/materialize.min.css';
-import './App.css';
+import 'normalize.css';
+import './styles/styles.css';
+import logo from './images/sun-cloud-blue.svg';
 
 class App extends Component {
   constructor(props) {
@@ -107,8 +109,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <AddressForm handleUserAddress={this.handleUserAddress} />
+      <div className="App App--intro">
+        <div className="row">
+          <div className="header">
+            <img className="logo" src={logo} alt="logo" />
+            <h1 className="title">weather</h1>
+          </div>
+          <p className="subtitle">A clean weather app.</p>
+          <AddressForm handleUserAddress={this.handleUserAddress} />
+        </div>
         {this.state.currentTemp && (
           <div className="main">
             <Currently
