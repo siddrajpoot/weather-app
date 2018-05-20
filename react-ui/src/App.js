@@ -5,10 +5,12 @@ import AddressForm from './components/AddressForm';
 import Currently from './components/Currently';
 import Hourly from './components/Hourly';
 import Daily from './components/Daily';
+
+import logo from './images/Asset-3.png';
+
 import 'materialize-css/dist/css/materialize.min.css';
 import 'normalize.css';
 import './styles/styles.css';
-import logo from './images/sun-cloud-blue.svg';
 
 class App extends Component {
   constructor(props) {
