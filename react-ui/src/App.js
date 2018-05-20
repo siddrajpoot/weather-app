@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import AddressForm from './Components/AddressForm';
-import Currently from './Components/Currently';
-import Hourly from './Components/Hourly';
-import Daily from './Components/Daily';
-import 'materialize-css/dist/css/materialize.min.css';
+import AddressForm from './Components/AddressForm/AddressForm';
+import Currently from './Components/Currently/Currently';
+import Hourly from './Components/Hourly/Hourly';
+import Daily from './Components/Daily/Daily';
 import './App.css';
 
 class App extends Component {
