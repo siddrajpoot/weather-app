@@ -112,27 +112,31 @@ class App extends Component {
   render() {
     return (
       <div className="App App--intro">
-        <div className="row">
-          <div className="header">
-            <img className="logo" src={logo} alt="logo" />
-            <h1 className="title">weather</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col s12 m6 offset-m3">
+              <div className="header">
+                <img className="logo" src={logo} alt="logo" />
+                <h1 className="title">weather</h1>
+              </div>
+              <p className="subtitle">A clean weather app.</p>
+              <AddressForm handleUserAddress={this.handleUserAddress} />
+            </div>
+            {this.state.currentTemp && (
+              <div className="main">
+                <Currently
+                  city={this.state.city}
+                  currentTemp={this.state.currentTemp}
+                  currentHumidity={this.state.currentHumidity}
+                  currentHigh={this.state.currentHigh}
+                  currentLow={this.state.currentLow}
+                />
+                <Hourly hourly={this.state.hourly} />
+                <Daily daily={this.state.daily} />
+              </div>
+            )}
           </div>
-          <p className="subtitle">A clean weather app.</p>
-          <AddressForm handleUserAddress={this.handleUserAddress} />
         </div>
-        {this.state.currentTemp && (
-          <div className="main">
-            <Currently
-              city={this.state.city}
-              currentTemp={this.state.currentTemp}
-              currentHumidity={this.state.currentHumidity}
-              currentHigh={this.state.currentHigh}
-              currentLow={this.state.currentLow}
-            />
-            <Hourly hourly={this.state.hourly} />
-            <Daily daily={this.state.daily} />
-          </div>
-        )}
       </div>
     );
   }
