@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import AddressForm from './components/AddressForm';
-import Currently from './components/Currently';
-import Hourly from './components/Hourly';
-import Daily from './components/Daily';
+import AddressForm from './Components/AddressForm';
+import Currently from './Components/Currently';
+import Hourly from './Components/Hourly';
+import Daily from './Components/Daily';
 import 'materialize-css/dist/css/materialize.min.css';
+<<<<<<< HEAD
 import 'normalize.css';
 import './styles/styles.css';
 import logo from './images/sun-cloud-blue.svg';
+=======
+import './App.css';
+>>>>>>> parent of bee0716... added scss support
 
 class App extends Component {
   constructor(props) {
