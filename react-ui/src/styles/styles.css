@@ -187,7 +187,7 @@ button:disabled {
               margin-right: 0; }
             .main .results .forecast .daily .results .day-container .day {
               font-size: 2.4rem;
-              margin-bottom: 0; }
+              margin: 0; }
             .main .results .forecast .daily .results .day-container .date {
               font-size: 2rem;
               margin: 0;
