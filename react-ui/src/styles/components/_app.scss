@@ -46,7 +46,8 @@
       background-color: #f3f4f6;
       padding: 0 $l-size;
       border-radius: 6px;
-      box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
       width: 100%;
 
       &:focus {
@@ -64,7 +65,60 @@
 
 .main {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-self: flex-start;
+
+  .nav {
+    align-self: flex-start;
+
+    .header {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      .logo {
+        height: 6rem;
+        padding-right: $s-size;
+      }
+
+      .title {
+        margin: 0;
+        font-size: 6rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .results {
+    display: flex;
+    flex-direction: row;
+
+    .currently {
+      height: 75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .forecast {
+      height: 75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .daily {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .hourly {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {

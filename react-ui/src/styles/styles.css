@@ -52,7 +52,7 @@ button:disabled {
       background-color: #f3f4f6;
       padding: 0 3.2rem;
       border-radius: 6px;
-      box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
       width: 100%; }
       .App--intro #address-form #address:focus {
         border-bottom: none;
@@ -63,7 +63,42 @@ button:disabled {
 
 .main {
   display: flex;
-  justify-content: space-around; }
+  flex-direction: column;
+  align-self: flex-start; }
+  .main .nav {
+    align-self: flex-start; }
+    .main .nav .header {
+      display: flex;
+      align-items: center;
+      flex-direction: row; }
+      .main .nav .header .logo {
+        height: 6rem;
+        padding-right: 1.2rem; }
+      .main .nav .header .title {
+        margin: 0;
+        font-size: 6rem;
+        font-weight: bold; }
+  .main .results {
+    display: flex;
+    flex-direction: row; }
+    .main .results .currently {
+      height: 75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .main .results .forecast {
+      height: 75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .main .results .forecast .daily {
+        display: flex;
+        flex-direction: row; }
+      .main .results .forecast .hourly {
+        display: flex;
+        flex-direction: row; }
 
 @media (min-width: 45rem) {
   .App--intro .header .logo {

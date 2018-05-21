@@ -4,7 +4,7 @@ const AddressForm = props => {
   return (
     <form onSubmit={props.handleUserAddress} id="address-form" className="">
       <input
-        className=""
+        className="z-depth-3"
         type="text"
         id="address"
         placeholder="Enter a location"

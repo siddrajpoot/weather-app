@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import logo from './images/Asset-3.png';
-
 import 'normalize.css';
 import 'materialize-css/dist/css/materialize.min.css';
-import './styles/styles.css';
+import '../styles/styles.css';
 
-import AddressForm from './components/AddressForm';
-import Currently from './components/Currently';
-import Hourly from './components/Hourly';
-import Daily from './components/Daily';
+import Header from './Header';
+import AddressForm from './AddressForm';
+import Currently from './Currently';
+import Hourly from './Hourly';
+import Daily from './Daily';
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +23,8 @@ class App extends Component {
       lng: '',
       currentTemp: '',
       currentHumidity: '',
-      city: ''
+      city: '',
+      hasResults: false
     };
   }
 
@@ -105,7 +105,8 @@ class App extends Component {
           currentHigh: res.data.daily.data[0].temperatureHigh,
           currentLow: res.data.daily.data[0].temperatureLow,
           hourly: res.data.hourly.data,
-          daily: res.data.daily.data
+          daily: res.data.daily.data,
+          hasResults: true
         }));
       });
   }
@@ -113,25 +114,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App--intro">
-          <div className="header">
-            <img className="logo" src={logo} alt="logo" />
-            <h1 className="title">weather</h1>
-          </div>
-          <p className="subtitle">a clean weather app</p>
-          <AddressForm handleUserAddress={this.handleUserAddress} />
-        </div>
-        {this.state.currentTemp && (
+        {this.state.hasResults ? (
           <div className="main">
-            <Currently
-              city={this.state.city}
-              currentTemp={this.state.currentTemp}
-              currentHumidity={this.state.currentHumidity}
-              currentHigh={this.state.currentHigh}
-              currentLow={this.state.currentLow}
-            />
-            <Hourly hourly={this.state.hourly} />
-            <Daily daily={this.state.daily} />
+            <div className="nav">
+              <Header />
+            </div>
+            <div className="results">
+              <Currently
+                city={this.state.city}
+                currentTemp={this.state.currentTemp}
+                currentHumidity={this.state.currentHumidity}
+                currentHigh={this.state.currentHigh}
+                currentLow={this.state.currentLow}
+              />
+              <div className="forecast">
+                <Daily daily={this.state.daily} />
+                <Hourly hourly={this.state.hourly} />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="App--intro">
+            <Header />
+            <p className="subtitle">a clean weather app</p>
+            <AddressForm handleUserAddress={this.handleUserAddress} />
           </div>
         )}
       </div>

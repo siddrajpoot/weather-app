@@ -6,9 +6,9 @@ const Daily = props => {
   return (
     <div className="daily">
       <p>
-        <strong>7 Day</strong>
+        <strong>5 Day</strong>
       </p>
-      {props.daily.slice(1, 8).map(day => {
+      {props.daily.slice(1, 6).map(day => {
         return (
           <Day
             key={day.time}
