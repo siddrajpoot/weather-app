@@ -70,6 +70,7 @@
 
   .nav {
     align-self: flex-start;
+    margin-bottom: $xl-size;
 
     .header {
       display: flex;
@@ -95,10 +96,96 @@
 
     .currently {
       height: 75rem;
+      background-image: linear-gradient(-195deg, #00c7fdbd 0%, #0096fb 100%);
+      box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      width: 33%;
+      margin-right: $l-size;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: $m-size;
+
+      .title {
+        padding: $m-size;
+        font-weight: lighter;
+        margin: 0;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        .city-date-container {
+          // margin-bottom: $l-size;
+          flex: 1;
+
+          .city {
+          }
+
+          .date-time-container {
+            display: flex;
+            flex-direction: row;
+            font-weight: 200;
+            font-size: 2rem;
+
+            p {
+              margin: 0 $xl-size;
+            }
+          }
+        }
+
+        .weather-icon {
+          font-family: weather-font;
+          color: #fff;
+          font-size: 20rem;
+          margin: -5rem 0;
+          flex: 1;
+        }
+
+        .weather-container {
+          font-weight: 100;
+          flex: 2;
+
+          .current-temp {
+            font-size: $xl-size;
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: $m-size;
+          }
+
+          .low-high-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              margin: 0 $xl-size;
+              opacity: 0.75;
+              font-size: 2rem;
+            }
+            margin-bottom: $m-size;
+          }
+
+          .summary {
+            font-size: $l-size;
+            margin: $m-size 0;
+            font-weight: normal;
+          }
+
+          .humidity,
+          .percipitation {
+            margin: 2rem 0;
+            opacity: 0.75;
+            font-size: 2rem;
+          }
+        }
+      }
     }
 
     .forecast {
@@ -107,15 +194,74 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 66%;
+      background-image: linear-gradient(-135deg, #fad961 0%, #f76b1c 100%);
+      box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      color: white;
+      padding: $m-size $xl-size;
 
       .daily {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+
+        .title {
+          padding: $m-size;
+          font-weight: lighter;
+          margin: 0;
+        }
+
+        .results {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .day-container {
+            background: #ffffff;
+            box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.11);
+            border-radius: 6px;
+            color: #f5a623;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: $m-size;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            .day {
+              font-size: 2.4rem;
+              margin-bottom: 0;
+            }
+
+            .date {
+              font-size: 2rem;
+              margin: 0;
+              font-weight: lighter;
+            }
+
+            .weather-icon {
+              font-size: 12rem;
+            }
+
+            .temperature {
+              margin: 0;
+              font-size: 3rem;
+            }
+          }
+        }
       }
 
       .hourly {
         display: flex;
         flex-direction: row;
+        flex: 1;
       }
     }
   }

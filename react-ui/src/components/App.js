@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import 'normalize.css';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -45,7 +46,6 @@ class App extends Component {
   }
 
   getGeocode(userAddress) {
-    console.log('test');
     return new Promise((resolve, reject) => {
       axios
         .get('/api/geocode', {
@@ -100,8 +100,9 @@ class App extends Component {
       .then(res => {
         console.log('Darksky:', res.data);
         this.setState(() => ({
-          currentTemp: res.data.currently.temperature,
-          currentHumidity: res.data.currently.humidity * 100,
+          currently: res.data.currently,
+          icon: res.data.currently.icon,
+          summary: res.data.currently.summary,
           currentHigh: res.data.daily.data[0].temperatureHigh,
           currentLow: res.data.daily.data[0].temperatureLow,
           hourly: res.data.hourly.data,
@@ -109,6 +110,12 @@ class App extends Component {
           hasResults: true
         }));
       });
+  }
+
+  updateTime() {
+    setInterval(() => {
+      return moment().format('h:mm:ss a');
+    }, 1000);
   }
 
   render() {
@@ -121,11 +128,15 @@ class App extends Component {
             </div>
             <div className="results">
               <Currently
+                currently={this.state.currently}
                 city={this.state.city}
                 currentTemp={this.state.currentTemp}
                 currentHumidity={this.state.currentHumidity}
                 currentHigh={this.state.currentHigh}
                 currentLow={this.state.currentLow}
+                updateTime={this.updateTime}
+                summary
+                icon={this.state.icon}
               />
               <div className="forecast">
                 <Daily daily={this.state.daily} />
