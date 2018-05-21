@@ -16,44 +16,60 @@ button:disabled {
 
 .App {
   text-align: center;
-  padding: 25px; }
-
-.App--intro {
+  padding: 25px;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.App--intro {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
   .App--intro .header {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex-direction: row; }
     .App--intro .header .logo {
-      height: 12rem;
-      padding-right: 3.2rem; }
+      height: 6rem;
+      padding-right: 1.2rem; }
     .App--intro .header .title {
       margin: 0;
-      font-size: 10rem;
+      font-size: 6rem;
       font-weight: bold; }
   .App--intro .subtitle {
     font-size: 2rem;
     font-weight: lighter;
-    margin: 3.2rem; }
-  .App--intro #address-form #address {
-    box-sizing: border-box;
-    height: 4.8rem;
-    border-bottom: none;
-    background-color: #f3f4f6;
-    padding: 0 3.2rem;
-    border-radius: 6px;
-    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1); }
-    .App--intro #address-form #address:focus {
+    margin: 2.5rem; }
+  .App--intro #address-form {
+    width: 100%; }
+    .App--intro #address-form #address {
+      box-sizing: border-box;
+      height: 4.8rem;
       border-bottom: none;
-      box-shadow: none; }
-    .App--intro #address-form #address::placeholder {
-      color: #7a7a7b;
-      font-weight: lighter; }
+      background-color: #f3f4f6;
+      padding: 0 3.2rem;
+      border-radius: 6px;
+      box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1);
+      width: 100%; }
+      .App--intro #address-form #address:focus {
+        border-bottom: none;
+        box-shadow: none; }
+      .App--intro #address-form #address::placeholder {
+        color: #7a7a7b;
+        font-weight: lighter; }
 
 .main {
   display: flex;
   justify-content: space-around; }
+
+@media (min-width: 45rem) {
+  .App--intro .header .logo {
+    height: 10rem;
+    margin-right: 1.6rem; }
+  .App--intro .header .title {
+    font-size: 10rem; }
+  .App--intro .subtitle {
+    font-size: 2.5rem; } }
