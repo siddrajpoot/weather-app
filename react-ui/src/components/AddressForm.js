@@ -10,6 +10,10 @@ const AddressForm = props => {
         placeholder="Enter a location"
         required
       />
+      <input
+        type="submit"
+        style={{ visibility: 'hidden', position: 'absolute' }}
+      />
     </form>
   );
 };
