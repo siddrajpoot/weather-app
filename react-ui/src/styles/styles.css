@@ -16,7 +16,7 @@ button:disabled {
 
 .App {
   text-align: center;
-  padding: 25px;
+  padding: 2rem;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -216,6 +216,68 @@ button:disabled {
             .main .results .forecast .hourly .results .hour .temperature {
               margin: 0;
               font-size: 2rem; }
+
+@media (max-width: 45rem) {
+  .App-mobile-home {
+    width: 100%;
+    height: 100%; }
+  .main {
+    width: 100%;
+    height: 100%; }
+    .main .nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3.2rem; }
+      .main .nav .header {
+        margin-bottom: 1.2rem; }
+    .main .results {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .main .results .currently {
+        max-width: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.6rem;
+        height: auto; }
+        .main .results .currently .content .weather-icon {
+          margin: 0 0 -5rem 0; }
+      .main .results .forecast {
+        height: auto;
+        max-width: none;
+        width: 100%;
+        padding: 1.6rem 3.2rem; }
+        .main .results .forecast .daily .results {
+          flex-direction: column; }
+          .main .results .forecast .daily .results .day-container {
+            margin-right: 0;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem; }
+            .main .results .forecast .daily .results .day-container .weather-icon {
+              margin: -1rem 0; }
+        .main .results .forecast .hourly .results {
+          flex-direction: row;
+          width: 100%;
+          flex-wrap: wrap;
+          margin-bottom: 2rem; }
+          .main .results .forecast .hourly .results .hour {
+            border-bottom: 2px solid #f5a623;
+            width: 20%; }
+            .main .results .forecast .hourly .results .hour:nth-child(n + 6):nth-child(-n + 10) {
+              border-bottom: none; }
+            .main .results .forecast .hourly .results .hour:nth-child(5),
+            .main .results .forecast .hourly .results .hour :nth-child(10) {
+              border-right: none; } }
+
+.App--intro #address-form {
+  width: 100%; }
+  .App--intro #address-form #address {
+    box-sizing: border-box;
+    height: 4.8rem;
+    width: 100%; }
 
 #address-form {
   width: 30rem; }

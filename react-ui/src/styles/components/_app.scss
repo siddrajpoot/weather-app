@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 25px;
+  padding: 2rem;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -275,6 +275,96 @@
             .temperature {
               margin: 0;
               font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-breakpoint) {
+  .App-mobile-home {
+    width: 100%;
+    height: 100%;
+  }
+  .main {
+    width: 100%;
+    height: 100%;
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $l-size;
+
+      .header {
+        margin-bottom: $s-size;
+      }
+    }
+
+    .results {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .currently {
+        max-width: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: $m-size;
+        height: auto;
+
+        .content {
+          .weather-icon {
+            margin: 0 0 -5rem 0;
+          }
+        }
+      }
+
+      .forecast {
+        height: auto;
+        max-width: none;
+        width: 100%;
+        padding: $m-size $l-size;
+
+        .daily {
+          .results {
+            flex-direction: column;
+
+            .day-container {
+              margin-right: 0;
+              padding: $m-size;
+              margin-bottom: $s-size;
+
+              .weather-icon {
+                margin: -1rem 0;
+              }
+            }
+          }
+        }
+
+        .hourly {
+          .results {
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            .hour {
+              // border-right: none;
+              border-bottom: 2px solid #f5a623;
+              width: 20%;
+
+              &:nth-child(n + 6):nth-child(-n + 10) {
+                border-bottom: none;
+              }
+
+              &:nth-child(5),
+              :nth-child(10) {
+                border-right: none;
+              }
             }
           }
         }

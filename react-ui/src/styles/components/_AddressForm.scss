@@ -1,3 +1,17 @@
+.App--intro {
+  .subtitle {
+  }
+
+  #address-form {
+    width: 100%;
+    #address {
+      box-sizing: border-box;
+      height: $xl-size;
+      width: 100%;
+    }
+  }
+}
+
 #address-form {
   // height: 3rem;
   width: 30rem;
@@ -21,4 +35,7 @@
       font-weight: lighter;
     }
   }
+}
+
+@media (max-width: $desktop-breakpoint) {
 }

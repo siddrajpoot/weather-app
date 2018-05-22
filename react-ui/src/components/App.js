@@ -121,8 +121,9 @@ class App extends Component {
   }
 
   render() {
+    let appClassName = this.state.hasResults ? 'App-mobile-home' : '';
     return (
-      <div className="App">
+      <div className={`App ${appClassName}`}>
         {this.state.hasResults ? (
           <div className="main">
             <div className="nav">
