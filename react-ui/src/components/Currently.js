@@ -8,7 +8,12 @@ const Currently = props => {
       <h3 className="title">Currently</h3>
       <div className="content">
         <div className="city-date-container">
-          <h2 className="city">{props.city}</h2>
+          {props.city ? (
+            <h2 className="city">{props.city}</h2>
+          ) : (
+            <h2 className="city">{props.formattedAddress}</h2>
+          )}
+
           <div className="date-time-container">
             <p className="date">{moment().format('MMM D')}</p>
             <p className="time">{moment().format('h:mm A')}</p>

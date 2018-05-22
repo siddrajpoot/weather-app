@@ -28,17 +28,6 @@ button:disabled {
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  .App--intro .header {
-    display: flex;
-    align-items: center;
-    flex-direction: row; }
-    .App--intro .header .logo {
-      height: 6rem;
-      padding-right: 1.2rem; }
-    .App--intro .header .title {
-      margin: 0;
-      font-size: 6rem;
-      font-weight: bold; }
   .App--intro .subtitle {
     font-size: 2rem;
     font-weight: lighter;
@@ -48,18 +37,7 @@ button:disabled {
     .App--intro #address-form #address {
       box-sizing: border-box;
       height: 4.8rem;
-      border-bottom: none;
-      background-color: #f3f4f6;
-      padding: 0 3.2rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
       width: 100%; }
-      .App--intro #address-form #address:focus {
-        border-bottom: none;
-        box-shadow: none; }
-      .App--intro #address-form #address::placeholder {
-        color: #7a7a7b;
-        font-weight: lighter; }
 
 .main {
   display: flex;
@@ -67,18 +45,12 @@ button:disabled {
   align-self: flex-start; }
   .main .nav {
     align-self: flex-start;
-    margin-bottom: 4.8rem; }
-    .main .nav .header {
-      display: flex;
-      align-items: center;
-      flex-direction: row; }
-      .main .nav .header .logo {
-        height: 6rem;
-        padding-right: 1.2rem; }
-      .main .nav .header .title {
-        margin: 0;
-        font-size: 6rem;
-        font-weight: bold; }
+    margin-bottom: 4.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
   .main .results {
     display: flex;
     flex-direction: row; }
@@ -243,11 +215,54 @@ button:disabled {
               margin: 0;
               font-size: 2rem; }
 
+#address-form {
+  width: 30rem; }
+  #address-form #address {
+    box-sizing: border-box;
+    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    border-bottom: none;
+    height: 5rem;
+    padding: 0 3.2rem; }
+    #address-form #address:focus {
+      border-bottom: none;
+      box-shadow: none; }
+    #address-form #address::placeholder {
+      color: #7a7a7b;
+      font-weight: lighter; }
+
+.App--intro .header a {
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+  .App--intro .header a .logo {
+    height: 6rem;
+    padding-right: 1.2rem; }
+  .App--intro .header a .title {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #000; }
+
+.main .nav .header a {
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+  .main .nav .header a .logo {
+    height: 6rem;
+    padding-right: 1.2rem; }
+  .main .nav .header a .title {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #000; }
+
 @media (min-width: 45rem) {
-  .App--intro .header .logo {
+  .App--intro .header a .logo {
     height: 10rem;
     margin-right: 1.6rem; }
-  .App--intro .header .title {
+  .App--intro .header a .title {
     font-size: 10rem; }
-  .App--intro .subtitle {
+  .App--intro .header .subtitle {
     font-size: 2.5rem; } }

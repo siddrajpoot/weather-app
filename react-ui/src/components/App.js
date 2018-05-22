@@ -25,7 +25,8 @@ class App extends Component {
       currentTemp: '',
       currentHumidity: '',
       city: '',
-      hasResults: false
+      hasResults: false,
+      formattedAddress: ''
     };
   }
 
@@ -58,7 +59,8 @@ class App extends Component {
           console.log(res);
           this.setState(() => ({
             lat: res.results[0].geometry.location.lat,
-            lng: res.results[0].geometry.location.lng
+            lng: res.results[0].geometry.location.lng,
+            formattedAddress: res.results[0].formatted_address
           }));
 
           this.getCityFromGeocode(res.results);
@@ -125,6 +127,7 @@ class App extends Component {
           <div className="main">
             <div className="nav">
               <Header />
+              <AddressForm handleUserAddress={this.handleUserAddress} />
             </div>
             <div className="results">
               <Currently
@@ -135,8 +138,8 @@ class App extends Component {
                 currentHigh={this.state.currentHigh}
                 currentLow={this.state.currentLow}
                 updateTime={this.updateTime}
-                summary
                 icon={this.state.icon}
+                formattedAddress={this.state.formattedAddress}
               />
               <div className="forecast">
                 <Daily daily={this.state.daily} />

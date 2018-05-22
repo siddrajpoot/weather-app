@@ -1,0 +1,78 @@
+.App--intro {
+  .header {
+    a {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      .logo {
+        height: 6rem;
+        padding-right: $s-size;
+      }
+
+      .title {
+        margin: 0;
+        font-size: 6rem;
+        font-weight: bold;
+        color: #000;
+      }
+    }
+  }
+}
+
+.main {
+  .nav {
+    .header {
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        .logo {
+          height: 6rem;
+          padding-right: $s-size;
+        }
+
+        .title {
+          margin: 0;
+          font-size: 6rem;
+          font-weight: bold;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .App--intro {
+    .header {
+      a {
+        .logo {
+          height: 10rem;
+          margin-right: $m-size;
+        }
+        .title {
+          font-size: 10rem;
+        }
+      }
+      .subtitle {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .main {
+    .nav {
+      .header {
+        a {
+          .logo {
+          }
+
+          .title {
+          }
+        }
+      }
+    }
+  }
+}

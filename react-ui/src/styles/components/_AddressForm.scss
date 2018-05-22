@@ -1,0 +1,24 @@
+#address-form {
+  // height: 3rem;
+  width: 30rem;
+
+  #address {
+    box-sizing: border-box;
+    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    border-bottom: none;
+    height: 5rem;
+    padding: 0 $l-size;
+
+    &:focus {
+      border-bottom: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: #7a7a7b;
+      font-weight: lighter;
+    }
+  }
+}
