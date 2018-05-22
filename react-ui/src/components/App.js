@@ -60,7 +60,7 @@ class App extends Component {
           this.setState(() => ({
             lat: res.results[0].geometry.location.lat,
             lng: res.results[0].geometry.location.lng,
-            formattedAddress: res.results[0].formatted_address
+            city: res.results[0].formatted_address
           }));
 
           this.getCityFromGeocode(res.results);
