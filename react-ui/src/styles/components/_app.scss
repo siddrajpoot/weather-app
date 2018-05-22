@@ -55,6 +55,7 @@
       box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.2);
       border-radius: 6px;
       width: 33%;
+      max-width: 33%;
       margin-right: $l-size;
       color: white;
       display: flex;
@@ -88,9 +89,10 @@
             flex-direction: row;
             font-weight: 200;
             font-size: 2rem;
+            justify-content: center;
 
             p {
-              margin: 0 $xl-size;
+              margin: 0 $l-size;
             }
           }
         }

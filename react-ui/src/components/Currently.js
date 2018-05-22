@@ -33,7 +33,7 @@ const Currently = props => {
             Humidity: {Math.round(props.currently.humidity * 100)}%
           </p>
           <p className="percipitation">
-            Percipitation: {Math.round(props.currently.precipProbability * 100)}%
+            Precipitation: {Math.round(props.currently.precipProbability * 100)}%
           </p>
         </div>
       </div>
