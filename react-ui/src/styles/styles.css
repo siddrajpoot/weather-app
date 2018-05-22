@@ -270,7 +270,9 @@ button:disabled {
               border-bottom: none; }
             .main .results .forecast .hourly .results .hour:nth-child(5),
             .main .results .forecast .hourly .results .hour :nth-child(10) {
-              border-right: none; } }
+              border-right: none; }
+            .main .results .forecast .hourly .results .hour .weather-icon {
+              font-size: 5rem; } }
 
 .App--intro #address-form {
   width: 100%; }
