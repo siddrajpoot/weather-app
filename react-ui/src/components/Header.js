@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/Asset-3.png';
+import logo from '../images/arrow-point-to-right.png';
 
 export default () => (
   <div className="header">
