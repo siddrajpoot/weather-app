@@ -14,6 +14,7 @@ const Hourly = props => {
               time={hour.time}
               temperature={hour.temperature}
               icon={hour.icon}
+              toggle={props.toggle}
             />
           );
         })}

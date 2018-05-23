@@ -6,9 +6,6 @@ const Degrees = props => {
   };
 
   return (
-    // <span>
-    //   {props.toggle ? }{degreesFormula}&deg;{props.toggle ? 'C' : 'F'}
-    // </span>
     <span>
       {props.toggle ? Math.round(props.temp) : degreesFormula(props.temp)}&deg;{props.toggle
         ? 'F'
