@@ -15,6 +15,7 @@ const Daily = props => {
               temperatureHigh={day.temperatureHigh}
               temperatureLow={day.temperatureLow}
               icon={day.icon}
+              toggle={props.toggle}
             />
           );
         })}

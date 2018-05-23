@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import WeatherIcon from './WeatherIcon';
+import Degrees from './Degrees';
 
 const Day = props => {
   return (
@@ -8,7 +9,9 @@ const Day = props => {
       <p className="day">{moment.unix(props.time).format('ddd')}</p>
       <p className="date">{moment.unix(props.time).format('M/D')}</p>
       <WeatherIcon icon={props.icon} />
-      <p className="temperature">{Math.round(props.temperatureHigh)}&deg;F</p>
+      <p className="temperature">
+        <Degrees toggle={props.toggle} temp={props.temperatureHigh} />
+      </p>
     </div>
   );
 };

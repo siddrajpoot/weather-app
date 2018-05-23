@@ -51,12 +51,39 @@ button:disabled {
     justify-content: space-between;
     align-items: center;
     width: 100%; }
+    .main .nav .address-toggle-container {
+      display: flex; }
+      .main .nav .address-toggle-container .switch {
+        margin-left: 4.8rem;
+        width: 80px;
+        height: 4.8rem;
+        background-color: #eee;
+        padding: 4px;
+        border-radius: 100px;
+        transition: all 0.3s ease-in-out; }
+      .main .nav .address-toggle-container .toggle {
+        background-color: white;
+        height: 40px;
+        width: 40px;
+        border-radius: 100px;
+        transition: all 0.3s ease-in-out;
+        margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f5a623;
+        font-weight: bolder;
+        font-size: 2rem; }
+      .main .nav .address-toggle-container .switch.cel {
+        background-color: #f5a623; }
+      .main .nav .address-toggle-container .switch.cel .toggle {
+        margin-left: 0; }
   .main .results {
     display: flex;
     flex-direction: row; }
     .main .results .currently {
       height: 75rem;
-      background-image: linear-gradient(-195deg, #00c7fdbd 0%, #0096fb 100%);
+      background-image: linear-gradient(-195deg, #00c7fd 0%, #0096fb 100%);
       box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.2);
       border-radius: 6px;
       width: 33%;

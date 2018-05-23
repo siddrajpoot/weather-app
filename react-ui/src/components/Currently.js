@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import WeatherIcon from './WeatherIcon';
+import Degrees from './Degrees';
 
 const Currently = props => {
   return (
@@ -22,11 +23,15 @@ const Currently = props => {
         <WeatherIcon icon={props.icon} />
         <div className="weather-container">
           <p className="current-temp">
-            {Math.round(props.currently.temperature)}&deg;F
+            <Degrees temp={props.currently.temperature} toggle={props.toggle} />
           </p>
           <div className="low-high-container">
-            <p className="low">Low: {Math.round(props.currentLow)}&deg;F</p>
-            <p className="high">High: {Math.round(props.currentHigh)}&deg;F</p>
+            <p className="low">
+              Low: <Degrees temp={props.currentLow} toggle={props.toggle} />
+            </p>
+            <p className="high">
+              High: <Degrees temp={props.currentHigh} toggle={props.toggle} />
+            </p>
           </div>
           <p className="summary">{props.currently.summary}</p>
           <p className="humidity">

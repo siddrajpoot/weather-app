@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 
 import 'normalize.css';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -17,6 +16,7 @@ class App extends Component {
     super(props);
 
     this.handleUserAddress = this.handleUserAddress.bind(this);
+    this.toggleTemp = this.toggleTemp.bind(this);
 
     this.state = {
       error: '',
@@ -26,7 +26,8 @@ class App extends Component {
       currentHumidity: '',
       city: '',
       hasResults: false,
-      formattedAddress: ''
+      formattedAddress: '',
+      toggle: true
     };
   }
 
@@ -114,10 +115,12 @@ class App extends Component {
       });
   }
 
-  updateTime() {
-    setInterval(() => {
-      return moment().format('h:mm:ss a');
-    }, 1000);
+  toggleTemp() {
+    this.setState(prevState => ({
+      toggle: !prevState.toggle
+    }));
+
+    console.log(this.state.toggle);
   }
 
   render() {
@@ -128,7 +131,17 @@ class App extends Component {
           <div className="main">
             <div className="nav">
               <Header />
-              <AddressForm handleUserAddress={this.handleUserAddress} />
+              <div className="address-toggle-container">
+                <AddressForm handleUserAddress={this.handleUserAddress} />
+                <div
+                  className={this.state.toggle ? 'switch cel' : 'switch'}
+                  onClick={this.toggleTemp}
+                >
+                  <div className="toggle">
+                    <p>{this.state.toggle ? 'F' : 'C'}</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="results">
               <Currently
@@ -138,13 +151,13 @@ class App extends Component {
                 currentHumidity={this.state.currentHumidity}
                 currentHigh={this.state.currentHigh}
                 currentLow={this.state.currentLow}
-                updateTime={this.updateTime}
                 icon={this.state.icon}
                 formattedAddress={this.state.formattedAddress}
+                toggle={this.state.toggle}
               />
               <div className="forecast">
-                <Daily daily={this.state.daily} />
-                <Hourly hourly={this.state.hourly} />
+                <Daily daily={this.state.daily} toggle={this.state.toggle} />
+                <Hourly hourly={this.state.hourly} toggle={this.state.toggle} />
               </div>
             </div>
           </div>
